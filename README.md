@@ -1,3 +1,2 @@
 # Snake-SNAKE-SNAAAAAKE
-
-<img src="https://giphy.com/gifs/metal-gear-solid-5-konami-OrFmkOFx7PVK" width="100%">
+<img src="https://64.media.tumblr.com/de16b1f57b799bd8c26f23cacb815cc9/tumblr_nqwgiosVrT1s3ewmvo1_400.gifv" width="100%">
