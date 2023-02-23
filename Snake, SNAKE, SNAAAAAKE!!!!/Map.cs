@@ -11,32 +11,39 @@ namespace Snake__SNAKE__SNAAAAAKE____
     internal class Map  
     {
         private List<List<char>> map;
-        private Snake snake;
 
-        public Map(Snake snake)
+        public Map()
         {
             map = new List<List<char>>();
-            this.snake = snake;
             initMap();
 
         }
 
-        public void Draw(GameObject[] gameObjects)
+		public Vector2 Size { get; private set; }
+
+		public void Draw(GameObject[] gameObjects)
         {
-            Console.SetCursorPosition(0, 0);
             for (int x = 0; x < map.Count; x++)
             {
 
                 for (int y = 0; y < map[x].Count; y++)
                 {
-                    if (snake.Position == new Vector2(y, x))
+                    bool drawnObject = false;
+                    foreach (var gameObject in gameObjects)
                     {
-                        Console.Write('s');
+                        if (gameObject.Position == new Vector2(y, x))
+                        {
+                            gameObject.Draw();
+                            drawnObject = true;
+                            break;
+                        }
                     }
-                    else
-                    {
+
+                    if (!drawnObject)
+					{
 						Console.Write(map[x][y]);
 					}
+
 				}
                 Console.WriteLine();
 			}
@@ -55,6 +62,8 @@ namespace Snake__SNAKE__SNAAAAAKE____
                     map[line.index].Add(character.content);
                 }
             }
+
+            Size = new Vector2(map[0].Count, map.Count);
         }
     }
 }

@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Snake__SNAKE__SNAAAAAKE____
 {
-	internal class Point
+	internal class Point : GameObject
 	{
+		public override void Draw()
+		{
+			Console.Write('p');
+		}
 
-
+		public override void Update() {}
 	}
 }

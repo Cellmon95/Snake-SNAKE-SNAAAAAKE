@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 
 namespace Snake__SNAKE__SNAAAAAKE____
 {
-	internal class GameObject
+	internal abstract class GameObject
 	{
 		public Vector2 Position { get; set; }
 
-		public void Update()
-		{
+		public abstract void Update();
 
-		}
-
-		public void Draw()
-		{
-
-		}
+		public abstract void Draw();
 	}
 }
