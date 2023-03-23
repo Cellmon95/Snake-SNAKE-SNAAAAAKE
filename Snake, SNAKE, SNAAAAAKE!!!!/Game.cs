@@ -11,7 +11,7 @@ namespace Snake__SNAKE__SNAAAAAKE____
 {
     internal class Game
     {
-        private bool running = true;
+        private bool running;
         private System.Timers.Timer timer;
         private Map map;
 		private Snake snake;
@@ -21,7 +21,7 @@ namespace Snake__SNAKE__SNAAAAAKE____
 
 		public Game()
         {
-            snake= new Snake();
+			snake = new Snake();
 			timer = new System.Timers.Timer();
 			rand = new Random();
             score = 0;
@@ -61,6 +61,7 @@ namespace Snake__SNAKE__SNAAAAAKE____
             timer.Elapsed += Update;
             timer.Start();
             snake.ChangeDirection(Snake.Directions.Up);
+			running = true;
 
 			while (running)
 			{

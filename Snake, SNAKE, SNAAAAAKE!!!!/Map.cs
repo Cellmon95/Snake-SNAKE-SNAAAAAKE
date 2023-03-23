@@ -51,7 +51,13 @@ namespace Snake__SNAKE__SNAAAAAKE____
 
         private void initMap()
         {
-            string[] mapText = System.IO.File.ReadAllLines(@"C:\Users\Lucas\source\repos\Snake, SNAKE, SNAAAAAKE!!!!\Snake, SNAKE, SNAAAAAKE!!!!\Map.txt");
+            var dir = Directory.GetCurrentDirectory();
+            var mapRes = MapRes.Map;
+
+			string[] mapText = mapRes.Split(
+				new string[] { Environment.NewLine },
+				StringSplitOptions.None
+			);
 
             foreach (var line in mapText.Select((content, index) => (content, index)))
             {
